@@ -12,7 +12,7 @@ public class GradeCalcChallenge {
 		
 		double totalPossible = scan.nextInt();
 		
-		System.out.println("Enter the amount of points you got right on the quiz: ");
+		System.out.println("Enter the amount of points you got right on the quiz out of " + String.format("%.0f", totalPossible) + ": ");
 		
 		double score = scan.nextInt();
 		
