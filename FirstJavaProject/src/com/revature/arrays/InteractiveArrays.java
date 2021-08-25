@@ -41,21 +41,23 @@ public class InteractiveArrays {
 		
 	}
 	
+	
+	// returns the average of all integers in the array
 	static double getAverage(int[] arr) {
 		double total = 0;
 		for(int i = 0; i < arr.length; i++) {
 			total += arr[i];
 		}
 		
-		
-		
 		return total / arr.length;
 	}
 	
+	// prints out the array
 	static void printArray(int[] arr) {
 		System.out.println(Arrays.toString(arr));
 	}
 	
+	// prints the average of all the integers in the array
 	static void printAverage(double average) {
 		System.out.println("The average of all the numbers in the array is " + average);
 	}
