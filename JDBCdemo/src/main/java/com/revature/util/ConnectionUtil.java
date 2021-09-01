@@ -13,8 +13,8 @@ import java.util.Properties;
  * Singleton design pattern
  * 
  * -- private constructors
- * -- static field of an instance
- * -- leverage a public static getInstance() (our getInstance method in this case 
+ * -- static field of an instance of the class to be returned
+ * -- leverage a public static getInstance() (our getInstance method in this case is the getConnection() method)
  *  
  *  
  * @author leena

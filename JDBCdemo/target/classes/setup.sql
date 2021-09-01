@@ -26,3 +26,5 @@ CREATE TABLE nathanl.applications(
 	id SERIAL PRIMARY KEY,
 	app_owner INTEGER NOT NULL REFERENCES nathanl.users(id)
 );
+
+SELECT * FROM nathanl.users;

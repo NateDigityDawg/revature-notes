@@ -25,6 +25,7 @@ public class UserDao implements IUserDao {
 			stmt.setString(1, u.getUsername());
 			stmt.setString(2, u.getPassword());
 			
+			// the enum is tough because we have to accommodate for a separate custom ENUM type.
 			stmt.setObject(3, u.getRole(), Types.OTHER);
 			
 			ResultSet rs; // our SQL statement will return a value we need to iterate over it
