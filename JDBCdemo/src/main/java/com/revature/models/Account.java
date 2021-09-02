@@ -1,10 +1,12 @@
 package com.revature.models;
 
+import java.util.Objects;
+
 public class Account {
 	
 	private int id; // primary key
 	private double balance; // in SQL this is represented by the NUMERIC data-type
-	
+	private int ownerId;
 	
 	public Account() {
 		super();
@@ -18,6 +20,19 @@ public class Account {
 	}
 	
 	
+	public Account(double balance, int ownerId) {
+		super();
+		this.balance = balance;
+		this.ownerId = ownerId;
+	}
+
+	public Account(int id, double balance, int ownerId) {
+		super();
+		this.id = id;
+		this.balance = balance;
+		this.ownerId = ownerId;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -34,17 +49,19 @@ public class Account {
 		this.balance = balance;
 	}
 	
+	public int getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
+	}
+
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(balance);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + id;
-		return result;
+		return Objects.hash(balance, id, ownerId);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -54,18 +71,16 @@ public class Account {
 		if (getClass() != obj.getClass())
 			return false;
 		Account other = (Account) obj;
-		if (Double.doubleToLongBits(balance) != Double.doubleToLongBits(other.balance))
-			return false;
-		if (id != other.id)
-			return false;
-		return true;
+		return Double.doubleToLongBits(balance) == Double.doubleToLongBits(other.balance) && id == other.id
+				&& ownerId == other.ownerId;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Account [id=" + id + ", balance=" + balance + "]";
+		return "Account [id=" + id + ", balance=" + balance + ", ownerId=" + ownerId + "]";
 	}
-	
+
+
 	
 	
 	
